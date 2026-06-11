@@ -1,0 +1,79 @@
+# macOS and editor metadata
+.DS_Store
+**/.DS_Store
+.idea/
+.vscode/
+.claude/
+*.swp
+*.swo
+
+# Private presenter notes and superseded deployment instructions
+docs_to_follow/
+Githubio_code/plan.md
+
+# Python caches and tooling
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local Python environments
+venv/
+.venv/
+env/
+ENV/
+
+# Environment files and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Upstream source snapshots are tracked, but their nested Git metadata stays local.
+MuseTalk/.git.local-backup/
+MOSS-TTS-Nano/.git.local-backup/
+
+# Upstream sample media and training examples are not required to inspect code.
+MOSS-TTS-Nano/assets/
+MOSS-TTS-Nano/finetuning/datasets/
+MuseTalk/assets/demo/
+MuseTalk/data/audio/
+MuseTalk/data/video/
+
+# Downloaded model weights and Kaggle upload bundles (multiple GB)
+kaggle_to_upload/
+kaggle_to_upload.zip
+MuseTalk/models/**/.cache/
+MuseTalk/results/
+MuseTalk/output/
+MuseTalk/outputs/
+MuseTalk/*_results/
+checkpoints/
+*.bin
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+
+# Hugging Face and ML caches
+.cache/
+huggingface/
+wandb/
+runs/
+
+# Generated application outputs
+generated.wav
+tts_test.wav
+dubbed_output.mp4
+outputs/
+results/
+temp/
+tmp/
+
+# Notebook-generated checkpoints
+.ipynb_checkpoints/

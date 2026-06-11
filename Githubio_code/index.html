@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autonomous Video Dubbing with MuseTalk</title>
+  <meta name="description" content="Lip-sync any video to a new audio track using MuseTalk v1.5 on a single T4 GPU. Side-by-side source and output examples." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Navbar ─────────────────────────────────────────────── -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/>
+        <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+        <line x1="12" y1="19" x2="12" y2="22"/>
+        <line x1="8" y1="22" x2="16" y2="22"/>
+      </svg>
+      Autonomous Video Dubbing
+    </div>
+    <ul class="navbar-links">
+      <li><a href="#how-it-works">How it works</a></li>
+      <li><a href="#examples">Examples</a></li>
+      <li><a href="https://github.com/TMElyralab/MuseTalk" target="_blank" rel="noopener">MuseTalk ↗</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Hero ───────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-badge">Video Dubbing Pipeline</div>
+    <h1>Autonomous<br /><span>Video Dubbing</span><br />with MuseTalk</h1>
+    <p>
+      Lip-sync any talking-head video to a new audio track in seconds —
+      powered by MuseTalk&nbsp;v1.5 running on a single Kaggle T4 GPU.
+    </p>
+    <div class="hero-buttons">
+      <a class="btn btn-primary" href="#examples">
+        <!-- play icon -->
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        View examples
+      </a>
+      <a class="btn btn-secondary" href="https://github.com/TMElyralab/MuseTalk" target="_blank" rel="noopener">
+        <!-- github icon -->
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        View on GitHub
+      </a>
+    </div>
+  </section>
+
+  <!-- ── How it works ───────────────────────────────────────── -->
+  <section id="how-it-works" class="how-it-works">
+    <h2 class="section-title">How it <span>works</span></h2>
+    <div class="pipeline">
+      <div class="pipeline-step">
+        <div class="icon">🎤</div>
+        <div class="label">Text input</div>
+        <div class="sublabel">MOSS-TTS-Nano</div>
+      </div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-step">
+        <div class="icon">🔊</div>
+        <div class="label">Audio .wav</div>
+        <div class="sublabel">16 kHz mono</div>
+      </div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-step">
+        <div class="icon">🎬</div>
+        <div class="label">Target video</div>
+        <div class="sublabel">512 × 512</div>
+      </div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-step">
+        <div class="icon">⚡</div>
+        <div class="label">MuseTalk v1.5</div>
+        <div class="sublabel">Kaggle T4 GPU</div>
+      </div>
+      <div class="pipeline-arrow">→</div>
+      <div class="pipeline-step">
+        <div class="icon">✅</div>
+        <div class="label">Dubbed video</div>
+        <div class="sublabel">lip-synced .mp4</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Examples ───────────────────────────────────────────── -->
+  <section id="examples" class="examples">
+    <h2 class="section-title">Side-by-side <span>results</span></h2>
+    <div id="example-container">
+      <!-- cards injected by examples.js -->
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────────────────── -->
+  <footer class="footer">
+    <p>
+      Built with <a href="https://github.com/TMElyralab/MuseTalk" target="_blank" rel="noopener">MuseTalk v1.5</a>
+      &nbsp;·&nbsp;
+      TTS by <a href="https://github.com/OpenMOSS/MOSS-TTS-Nano" target="_blank" rel="noopener">MOSS-TTS-Nano</a>
+      &nbsp;·&nbsp;
+      Hosted on <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>
+    </p>
+  </footer>
+
+  <!-- ── Scripts ────────────────────────────────────────────── -->
+  <script src="examples.js"></script>
+  <script>
+    (function () {
+      const container = document.getElementById("example-container");
+
+      EXAMPLES.forEach(function (example) {
+        const card = document.createElement("div");
+        card.className = "example-card";
+        card.innerHTML = `
+          <div class="example-card-header">
+            <span class="example-tag">${escHtml(example.title)}</span>
+            <h3>${escHtml(example.description)}</h3>
+          </div>
+          <div class="example-grid">
+            <!-- Raw -->
+            <div class="example-col">
+              <div class="example-col-label">Original video</div>
+              <video controls preload="metadata" playsinline>
+                <source src="${escAttr(example.raw)}" type="video/mp4" />
+              </video>
+              <div class="example-col-label" style="margin-top:.3rem">Driving audio</div>
+              <audio controls preload="metadata">
+                <source src="${escAttr(example.audio)}" type="audio/wav" />
+              </audio>
+            </div>
+
+            <!-- Arrow divider -->
+            <div class="example-divider">
+              <span class="arrow-label">MuseTalk</span>
+              <span class="arrow">→</span>
+            </div>
+
+            <!-- Dubbed -->
+            <div class="example-col dubbed">
+              <div class="example-col-label">Dubbed result</div>
+              <video controls preload="metadata" playsinline>
+                <source src="${escAttr(example.dubbed)}" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+
+      function escHtml(s) {
+        return String(s)
+          .replace(/&/g, "&amp;").replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+      }
+      function escAttr(s) { return escHtml(s); }
+    })();
+  </script>
+</body>
+</html>
